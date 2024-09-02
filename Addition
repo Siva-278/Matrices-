@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+#define ROW 1
+#define COL 4
+
+void matrixAddition(int A[ROW][COL], int B[ROW][COL], int C[ROW][COL]) {
+    for (int i = 0; i < ROW; i++) {
+        for (int j = 0; j < COL; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+}
+
+void displayMatrix(int matrix[ROW][COL]) {
+    for (int i = 0; i < ROW; i++) {
+        for (int j = 0; j < COL; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int A[ROW][COL] = {{3, 4, 2, 4}};
+    int B[ROW][COL] = {{1, 2, 3, 4}};
+    int C[ROW][COL];
+
+    matrixAddition(A, B, C);
+
+    printf("Matrix A:\n");
+    displayMatrix(A);
+
+    printf("\nMatrix B:\n");
+    displayMatrix(B);
+
+    printf("\nMatrix C (result of A + B):\n");
+    displayMatrix(C);
+
+    return 0;
+}
